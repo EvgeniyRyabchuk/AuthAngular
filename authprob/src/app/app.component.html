@@ -5,10 +5,13 @@
     </li>
   </ul>
   <div class="navbar-nav">
-    <a class="nav-link" routerLink="/login" *ngIf="!loggedIn">Login</a>
-    <a class="nav-link" routerLink="/" *ngIf="loggedIn" (click)="logout()">Logout</a>
-    <button (click)="click()">Show</button>
-    <button (click)="refresh_token()">Refresh</button>
+    <div class="d-flex">
+      <a class="nav-link mx-2" routerLink="/login" *ngIf="!loggedIn">Login</a>
+      <a class="nav-link mx-2" routerLink="/" *ngIf="loggedIn" (click)="logout()">Logout</a>
+      <a class="nav-link mx-2" routerLink="/register" *ngIf="!loggedIn" (click)="registration()">Registration</a>
+      <button (click)="click()">Show</button>
+      <button (click)="refresh_token()">Refresh</button>
+    </div>
   </div>
 </nav>
 

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpService} from "../shared/http.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent implements OnInit{
 
   loggedIn:boolean = false;
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, private router: Router) { }
 
   ngOnInit() {
     this.httpService.subjectLg.subscribe((res: boolean) =>
@@ -56,6 +57,10 @@ export class AppComponent implements OnInit{
     }
   }
 
+  registration():void
+  {
+    this.router.navigate(['/register']);
+  }
 
 
 }
