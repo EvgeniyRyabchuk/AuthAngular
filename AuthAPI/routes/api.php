@@ -25,4 +25,8 @@ header('Access-Control-Allow-Origin: *');
 Route::get('/', [UserController::class, 'index']);
 Route::get('/user', [UserController::class, 'user'])->middleware('auth:api'); 
 Route::post('/register', [UserController::class, 'register']);
-Route::get('/show', [UserController::class, 'show']); 
+Route::post('forgot', [UserController::class, 'forgot']); 
+Route::post('reset', [UserController::class, 'reset']);
+
+
+Route::get('/show', [UserController::class, 'show'])->middleware('auth:api'); ; 

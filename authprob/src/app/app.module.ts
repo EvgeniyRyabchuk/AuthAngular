@@ -6,19 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { SecureComponent } from './secure/secure.component';
 import {PublicModule} from "./public/public.module";
 import {RouterModule} from "@angular/router";
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TokenInterceptor} from "../shared/token.interceptor";
 
 @NgModule({
   declarations: [
     AppComponent,
-    SecureComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PublicModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

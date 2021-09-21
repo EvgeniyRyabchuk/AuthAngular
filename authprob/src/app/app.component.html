@@ -9,8 +9,11 @@
       <a class="nav-link mx-2" routerLink="/login" *ngIf="!loggedIn">Login</a>
       <a class="nav-link mx-2" routerLink="/" *ngIf="loggedIn" (click)="logout()">Logout</a>
       <a class="nav-link mx-2" routerLink="/register" *ngIf="!loggedIn" (click)="registration()">Registration</a>
+      <button class="nav-link mx-2"  *ngIf="loggedIn" (click)="password_forgot()">Password Foreget</button>
+
       <button (click)="click()">Show</button>
       <button (click)="refresh_token()">Refresh</button>
+      <button (click)="secure()">Secure</button>
     </div>
   </div>
 </nav>

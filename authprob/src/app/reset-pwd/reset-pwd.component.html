@@ -1,0 +1,22 @@
+<p>reset-pwd works!</p>
+
+
+<h3>Your personal token is <span style="font-size: large; font-family: Arial; font-weight: bold; color: red;">{{token}}</span></h3>
+
+<h1>Plaese enter new password</h1>
+
+<form [formGroup]="formGroupe" (submit)="submit()">
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="pwdConfirm" class="form-label">Password confirmation</label>
+    <input type="password" formControlName="password_confirmation" class="form-control" id="pwdConfirm">
+  </div>
+  <input type="hidden" name="token" value="{{token}}">
+
+  <button type="submit" class="btn btn-primary" [disabled]="!formGroupe.valid">Change</button>
+</form>
+

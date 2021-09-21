@@ -11,12 +11,11 @@ import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
-  declarations: [PublicComponent, HomeComponent, LoginComponent, RegisterComponent],
+  declarations: [PublicComponent],
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ]
 })
 export class PublicModule { }

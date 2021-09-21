@@ -26,10 +26,6 @@ export class HttpService {
 
   public getUser(): Observable<IUser>
   {
-    // const headers = new HttpHeaders({
-    //   'Authorization': `Bearer ${localStorage.getItem('token')}`
-    // });
-    // {headers: headers}
     return this.http.get<IUser>('http://localhost:8000/user');
   }
 
@@ -41,6 +37,16 @@ export class HttpService {
   public refresh_token(data:any): Observable<any>
   {
       return this.http.post('http://localhost:8000/oauth/token/refresh ', data);
+  }
+
+  public password_forgot(data: any):  Observable<any>
+  {
+      return this.http.post('http://localhost:8000/forgot', data);
+  }
+
+  public password_reset(data: any): Observable<any>
+  {
+    return this.http.post('http://localhost:8000/reset', data);
   }
 
   public show(): Observable<any>

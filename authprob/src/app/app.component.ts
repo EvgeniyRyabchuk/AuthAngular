@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
 
   loggedIn:boolean = false;
 
-  constructor(private httpService: HttpService, private router: Router) { }
+  constructor(private httpService: HttpService,  private router: Router) { }
 
   ngOnInit() {
     this.httpService.subjectLg.subscribe((res: boolean) =>
@@ -62,5 +62,20 @@ export class AppComponent implements OnInit{
     this.router.navigate(['/register']);
   }
 
+  secure():void
+  {
+    this.router.navigate(['/secure']);
+  }
+
+  password_forgot():void
+  {
+    console.log(this.httpService.subjectUser.getValue().email);
+
+    const data = {
+       'email': this.httpService.subjectUser.getValue().email
+    }
+
+    this.httpService.password_forgot(data).subscribe(res => console.log(res));
+  }
 
 }
